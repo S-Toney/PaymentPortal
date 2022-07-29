@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPDataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,17 @@ namespace PaymentPortal.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult TestErrorWriteToDB_Click(object sender, EventArgs e)
+        {
+            /* Testing the Error Writing to DB functionality */
+            Exception ex = new Exception();
+            DataLayer PSDL = new DataLayer();
+            PSDL.ErrorMessageWriter(ex, "Testing Error writing connection to DB", "testing", $"{PSDL.ApplicationName} - Testing Error Writing Button");
+            //throw;
+            return RedirectToAction("Index");
         }
     }
 }
