@@ -8,15 +8,26 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-light navbar-fixed-top p-3 mt-0" style="background-color: #c3e3fa;">
+        @Html.ActionLink("Payment Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) &emsp; <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            &nabla;
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li class="dropdown-item">  @Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="dropdown-item"> </li>
+            <li class="dropdown-item">  </li>
+        </ul>
+    </nav>
+    <!--<div class="navbar navbar-expand-lg navbar-fixed-top">-->
+        @*navbar-inverse*@
+        <!--<div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Payment Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -26,17 +37,19 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer style="background-color: #c3e3fa;" class="p-3 w-100">
+            <p>&copy; @DateTime.Now.Year - Tessa Toney</p>
+            <p>@Html.ActionLink("Contact", "Contact", "Home") &emsp; @Html.ActionLink("About", "About", "Home") </p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
