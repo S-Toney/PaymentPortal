@@ -10,8 +10,10 @@ namespace PaymentPortal.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<PaymentPortal.Models.UsersModel> ListPaymentPortalUserModel = new List<PaymentPortal.Models.UsersModel>();
+            return View(ListPaymentPortalUserModel);
         }
+
 
         #region Commented
         //// GET: Users
